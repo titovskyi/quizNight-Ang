@@ -13,7 +13,7 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class GamesService {
 
-  private url = 'https://blooming-tundra-14028.herokuapp.com/api/';
+  private url = 'https://quiznight-back.herokuapp.com//api/';
   public newTeam: NewTeam;
 
   constructor(private http: HttpClient) { }
