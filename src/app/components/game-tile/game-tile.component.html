@@ -1,0 +1,20 @@
+<div class="tile">
+  <div class="upper_tile">
+    <div class="left_upper_tile">
+      <p class="league">{{game.league_name}} лига</p>
+      <p class="game">{{game.game}} игра &#183; {{game.season_id}} сезон</p>
+    </div>
+    <div class="right_uppe_tile">
+      <p><img src="../../../assets/main_logo.png" alt=""></p>
+    </div>
+  </div>
+  <p class="date"><img src="../../../assets/calend.png" alt=""><span>{{game.data | date:'dd MMMM , EEE. HH:mm':'UTC':'ru'}}</span></p>
+  <div class="place">
+    <p class="location">"{{game.location}}"</p>
+    <p class="adress">{{game.adress}}, <span> {{game.league_city}} </span></p>
+  </div>
+  <div class="but_block">
+    <a class="btn btn-default" (click)="openTeams(game)">Команды</a>
+    <a class="btn btn-success btn_send" (click)="openTeamApplication(game)">Подать заявку</a>
+  </div>
+</div>

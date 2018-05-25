@@ -1,0 +1,496 @@
+@mixin flex-position ($justify-content, $align-items, $flex-wrap: nowrap) {
+	display: flex;
+	justify-content: $justify-content;
+	align-items: $align-items;
+	flex-wrap: $flex-wrap;
+}
+.gallery_block {
+	max-width: 98%;
+}
+content {
+	font-family: 'rubikRegular';
+	.banner {
+		background-image: url(../../../assets/main_banner.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		border-radius: 4px;
+		background-position: center center;
+		height: 70rem;
+		margin: 0 5rem;
+		@include flex-position (center, center);
+		.main_banner_text {
+			text-align: center;
+			color: #ffffff;
+			h3 {
+				font-size: 4.8rem;
+				font-family: 'rubikMedium';
+				text-align: center;
+				margin-bottom: 2.2rem;
+			}
+			p {
+				font-weight: 200;
+				font-size: 2rem;
+				margin-bottom: 2.2rem;
+			}
+			a {
+				@include flex-position (center, center);
+				width: 20rem;
+				height: 5rem;
+				font-size: 1.6rem;
+				margin: 0 auto;
+				border-radius: 5px;
+				background: #56cd89;
+			}
+		}
+	}
+	.main_about {
+		justify-content:space-between;
+		max-width: 1440px;
+		margin: 0 auto;
+		.main_text_about {
+			height: 47rem;
+			.main_about_inner {
+				width: 360px;
+				margin: 10rem auto;
+				flex-direction: column;
+				@include flex-position (space-between, flex-start, wrap);
+				img {
+					width: 80px;
+					height: 80px;
+				}
+				h3 {
+					font-size: 3.2rem;
+					margin: 4rem 0;
+					color: rgba(74, 73, 74, 1);
+				}
+				p {
+					font-size: 1.6rem;
+					color: rgba(74, 73, 74, 0.64);
+					line-height: 1.8;
+					margin-bottom: 2.2rem;
+				}
+				.more {
+					font-size: 1.6rem;
+					font-weight: 600;
+					color: #E67C3B;
+					cursor: pointer;
+				}
+			}
+		}
+		.small_gallery {
+			display: none;
+		}
+		.gallery {
+			margin-top: 16rem;
+			position: relative;
+			height: 59.5rem;
+			max-width: 66rem;
+			.slide {
+				cursor: pointer;
+				.first_slide_div {
+					position: absolute;
+					top: 65px;
+					left: 0;
+					background-size: cover;
+					width: 160px;
+					height: 213px;
+					border-radius: 4px;
+					overflow: hidden;
+					.first_slide {
+						height: 100%;
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+					}
+				}
+				.second_slide_div {
+					position: absolute;
+					top: 0;
+				  left: 50%;
+				  transform: translate(-45%, 0);
+					height: 108px;
+					width: 144px;
+          border-radius: 4px;
+					overflow: hidden;
+          .second_slide {
+						height: 100%;
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+          }
+        }
+        .third_slide_div {
+          position: absolute;
+          top: 85px;
+          right: 0;
+          border-radius: 4px;
+          height: 78px;
+          width: 104px;
+          overflow: hidden;
+          .third_slide {
+						height: 100%;
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+          }
+        }
+        .forth_slide_div {
+          position: absolute;
+          top: 308px;
+          left: 25px;
+          height: 102px;
+          width: 136px;
+          border-radius: 4px;
+          overflow: hidden;
+          .forth_slide {
+						height: 100%;
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+          }
+        }
+        .fifth_slide_div {
+          position: absolute;
+          top: 138px;
+          left: 190px;
+          height: 320px;
+          width: 240px;
+          border-radius: 4px;
+          overflow: hidden;
+          .fifth_slide {
+						height: 100%;
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+          }
+        }
+        .sixth_slide {
+          position: absolute;
+          top: 190px;
+          right: 0;
+          width: 200px;
+          height: 150px;
+          border-radius: 4px;
+          overflow: hidden;
+          .sixth_slide {
+            height: 100%;
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+          }
+        }
+        .seventh_slide {
+          position: absolute;
+          bottom: 0;
+          left: 190px;
+          height: 108px;
+          width: 144px;
+          border-radius: 4px;
+          overflow: hidden;
+          .seventh_slide {
+            height: 100%;
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+          }
+        }
+        .eighth_slide {
+          position: absolute;
+          bottom: 106px;
+          right: 40px;
+          height: 120px;
+          width: 160px;
+          border-radius: 4px;
+          overflow: hidden;
+          .eighth_slide {
+            height: 100%;
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+          }
+        }
+			}
+		}
+	}
+	.info_block {
+		@include flex-position (space-around, center);
+		border: 1px solid #EDEDF3;
+		padding: 4rem;
+		margin-top: 10rem;
+		border-radius: 4px;
+		.persons, .questions, .cost {
+			@include flex-position (center, center);
+			img {
+				height: 50px;
+			}
+			.info_number {
+				font-size: 6.4rem;
+				margin: 0 1rem;
+				color: rgba(74, 74, 74, 1);
+				font-family: 'rubikLight';
+			}
+			.info_text {
+				font-size: 2rem;
+				width: 10rem;
+				color: rgba(74, 73, 74, 0.64);
+				line-height: 1.2;
+				margin: 0;
+			}
+		}
+	}
+	.schedule {
+		margin-top: 10rem;
+		h3 {
+			font-size: 3.2rem;
+      text-align: center;
+			color: rgba(74, 73, 74, 1);
+			margin-bottom: 2rem;
+  	}
+		.schedule_header {
+      font-size: 1.8rem;
+			width: 47rem;
+      text-align: center;
+      color: rgba(73, 73, 73, 0.64);
+			margin: 0 auto 0rem auto;
+			a {
+				color: rgba(54, 126, 106, 1);
+				margin-left: 0.5rem;
+			}
+		}
+		.show {
+			text-align: center;
+			.btn {
+				@include flex-position(center, center);
+				font-size: 1.6rem;
+				width: 14.6rem;
+				height: 3.8rem;
+        color: #4a4a4a;
+				opacity: 0.64;
+				text-align: center;
+				margin: 1rem auto 0 auto;
+			}
+		}
+	}
+	.main_phrase {
+		background: rgb(44, 192, 109);
+		background: -moz-linear-gradient(0deg, rgb(44, 192, 109) 0%, rgb(123, 225, 255) 100%);
+		background: -webkit-linear-gradient(0deg, rgb(44, 192, 109) 0%, rgb(123, 225, 255) 100%);
+		background: -o-linear-gradient(0deg, rgb(44, 192, 109) 0%, rgb(123, 225, 255) 100%);
+		background: -ms-linear-gradient(0deg, rgb(44, 192, 109) 0%, rgb(123, 225, 255) 100%);
+		background: linear-gradient(90deg, rgb(44, 192, 109) 0%, rgb(123, 225, 255) 100%);
+		max-width: 946px;
+		margin: 10rem auto;
+		padding: 5.5rem 0 5.5rem 7.3rem;
+		border-radius: 15px;
+		position: relative;
+		overflow: hidden;
+		.main_phrase_logo {
+		position: absolute;
+		width: 200px;
+		height: 200px;
+		right: -3.5rem;
+		bottom: -3.5rem;
+		}
+		.btn {
+			font-family: 'rubikLight';
+			color: #ffffff;
+			background: #367e6a;
+			width: 20rem;
+			height: 5rem;
+			@include flex-position (center, center);
+			font-size: 1.6rem;
+		}
+
+	}
+}
+.popup {
+	display: none;
+	background: rgba(0, 0, 0, 0.8);
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100vh;
+	.close {
+		opacity: 1;
+		margin-left: -2rem;
+	}
+	.popup_inner {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		.pop_content {
+			@include flex-position (center, center);
+			.left_arrow img, 
+			.right_arrow img{
+				width: 50px;
+				height: 50px;
+				cursor: pointer;
+			}
+      .fa {
+				cursor: pointer;
+				font-weight: light;
+      }
+			.slide {
+				height: 90vh;
+				border-radius: 15px;
+			}
+		}
+	}
+}
+.fa-chevron-right:hover, .fa-chevron-left:hover {
+	opacity: 0.6;
+}
+.fa {
+	color: white;
+	font-size: 3rem;
+}
+span.emoji {
+  font-size: 20px !important;
+  vertical-align: middle !important;
+  line-height: 2 !important;
+}
+.btn-default {
+	color: rgba(74, 74, 74, 0.64);
+	opacity: 0.64;
+	text-decoration: none;
+	border: 1px solid rgba(74, 74, 74, 0.64);
+	margin-right: 1.5rem;
+	&:hover {
+		border: 1px solid rgba(74, 74, 74, 0.5);
+		color: rgba(74, 74, 74, 0.5);
+	}
+}
+
+@media (max-width: 1199px) {
+	content .main_about .main_text_about .main_about_inner {
+		@include flex-position (center, center, wrap);
+		text-align: center;
+		width: 70%;
+		.more {
+			margin-top: 3rem;
+		}
+	}
+	content .main_about .gallery {
+		margin: 0 auto;
+		margin-top: 10rem;
+	}
+}
+@media (max-width: 991px) {
+	.arrow {
+		display: none;
+	}
+	.persons, .questions {
+		width: 50%;
+	}
+	content {
+		.banner {
+	  	height: 40rem;
+	    margin: 0;
+	    border-radius: 0;
+	    .main_banner_text {
+				h3 {
+					font-size: 3rem;
+					text-align: center;
+				}
+			}
+	  }
+		.info_block {
+			display: flex;
+			flex-wrap: wrap;
+		}
+	}
+	.main_phrase {
+		width: 100%;
+		margin-left: 2rem;
+		margin-right: 2rem;
+	}
+
+}
+
+@media (max-width: 768px) {
+  content {
+	  .banner {
+	  	height: 40rem;
+	    margin: 0;
+	    border-radius: 0;
+	    .main_banner_text {
+				h3 {
+					font-size: 3rem;
+					text-align: center;
+				}
+			}
+	  }
+	  .main_about {
+	  	.main_text_about {
+	  		.main_about_inner {
+					margin-top: 6rem;
+					h3 {
+						margin: 2rem 0;
+					}
+	  		}
+	  	}
+	  	.gallery {
+				display: none;
+			}
+			.small_gallery {
+				display: flex;
+	  		justify-content: center;
+			}
+	  }
+	  .schedule {
+	  	.schedule_header {
+	  		width: auto;
+	  		margin-bottom: 2rem;
+	  	}
+	  }
+  }
+ 	.persons, .questions {
+		width: 100%;
+	}
+	content .main_phrase, 
+	content .schedule, 
+	content .info_block {
+		margin: 6rem auto;
+	}
+	content .main_about .gallery {
+		display: none;
+	}
+	content .main_about .main_text_about {
+		height: 55rem;
+	}
+	content .schedule .show .btn {
+		margin-top: 2rem;
+	}
+}
+
+@media (max-width: 576px) {
+	.main_text_about {
+		box-sizing: border-box;
+	}
+	content .main_phrase .main_phrase_logo {
+		display: none;
+	}
+	content .main_phrase {
+		padding: 5rem 2rem;
+	}
+}
+@media (max-width: 455px) {
+	content .main_about .main_text_about {
+		height: 60rem;
+	}
+}
+@media (max-width: 360px) {
+	content .main_about .main_text_about {
+		height: 70rem;
+	}
+}

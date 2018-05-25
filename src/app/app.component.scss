@@ -1,0 +1,229 @@
+@mixin flex-position ($justify-content, $align-items, $flex-wrap: nowrap) {
+	display: flex;
+	justify-content: $justify-content;
+	align-items: $align-items;
+	flex-wrap: $flex-wrap;
+}
+header {
+	.navbar-light {
+		.navbar-brand {
+			font-family: 'rubikBold';
+			font-size: 2.4rem;
+			text-transform: uppercase;
+			color: rgba(230, 124, 59, 1);
+			cursor: pointer;
+			letter-spacing: 1px;
+			span {
+				font-family: 'rubikRegular';
+				color: rgba(131, 207, 201, 1);
+				font-weight: 600;
+			}
+		}
+	}
+}
+.navbar-light {
+	font-family: 'rubikRegular';
+	margin: 0 4rem;
+	.navbar-nav {
+		.nav-link {
+			font-size: 1.4rem;
+			color: rgba(74, 73, 74, 0.64);
+			cursor: pointer;
+			margin: 0 2rem;
+			&:last-child {
+				margin-right: 0;
+			}
+			&:hover {
+				opacity: 0.5;
+			}
+    }
+    .active {
+      color: #4A4A4A;
+    }
+	}
+}
+.navbar-expand-lg .navbar-collapse {
+	justify-content: flex-end;
+}
+footer {
+	@include flex-position (space-around, top);
+	// padding: 5rem;
+	padding: 0 15rem 6.1rem 15rem;
+	background: rgba($color: #EDEDF3, $alpha: 0.24);
+	clear: both;
+	.footer_logo {
+		.logo {
+			margin-top: 5.5rem;
+			font-size: 2rem;
+			text-transform: uppercase;
+			font-family: 'rubikMedium';
+			color: #4A4A4A;
+			margin-bottom: 2.7rem;
+			img {
+				width: 50px;
+				margin-right: 2rem;
+			}
+		}
+		p {
+			font-size: 1.2rem;
+			color: rgba(74, 74, 74, 0.64);
+		}
+	}
+	.footer_business {
+		p {
+			font-family: 'rubikMedium';
+			font-size: 1.6rem;
+			margin: 6.1rem 0 2rem 2rem;
+			color: #4A4A4A;
+		}
+		ul {
+			list-style: none;
+			font-size: 1.4rem;
+			li {
+				margin: 0;
+				font-family: 'rubikRegular';
+				color: rgba(74, 74, 74, 0.64);
+				cursor: pointer;
+				margin: 1.5rem 0 1.5rem -2rem;
+				&:hover {
+					color: rgba(74, 74, 74, 0.5);
+				}
+			}
+		}
+	}
+	.footer_nav {
+		p {
+			font-family: 'rubikMedium';
+			font-size: 1.6rem;
+			margin: 6.1rem 0 2rem 4rem;
+			color: #4A4A4A;
+		}
+		ul {
+			list-style: none;
+			font-size: 1.4rem;
+			li, a {
+				margin: 0;
+				font-family: 'rubikRegular';
+				color: rgba(74, 74, 74, 0.64);
+				cursor: pointer;
+				margin: 1.5rem 0;
+				text-decoration: none;
+				&:hover {
+					color: rgba(74, 74, 74, 0.5);
+				}
+			}
+		}
+	}
+	.communication {
+		p {
+			font-family: 'rubikMedium';
+			font-size: 1.6rem;
+			text-align: left;
+			margin: 6.1rem 0 2rem 4rem;
+			color: #4A4A4A;
+		}
+		ul {
+			list-style: none;
+			font-size: 1.4rem;
+			margin-bottom: 3.1rem;
+			li {
+				a {
+					font-family: 'rubikRegular';
+					color: rgba(74, 74, 74, 0.64);
+					text-decoration: none;
+				}
+				margin: 0.7rem 0;
+				cursor: pointer;
+			}
+		}
+		.social	{
+			margin-left: 4rem;
+			img {
+				margin-right: 0.8rem;
+				width: 35px;
+			}
+		}
+	}
+}
+
+@media (max-width: 1040px) {
+	footer {
+		flex-wrap: wrap;
+		padding: 3.4rem 0 1.5rem 0;
+		.footer_logo {
+			width: 100%;
+			text-align: center;
+			.logo {
+				margin-top: 0;
+			}
+		} 
+		.footer_nav, 
+		.footer_business, 
+		.communication {
+			width: 100%;
+			text-align: center;
+			margin-top: 4rem;
+		p {
+			margin: 0 0 2.5rem 0;
+			text-align: center;
+		}
+			ul {
+				display: flex;
+				justify-content: center;
+				padding-left: 0;
+				li {
+					margin: 0 1rem;
+				}
+			}
+			.social {
+				margin-top: 3.3rem;
+				margin-left: 0;
+				img {
+					margin: 0 0.4rem;
+				}
+			}
+		}
+	}
+}
+@media (max-width: 991px) {
+	.navbar-light .navbar-nav .nav-link {
+		margin: 1rem 0;
+	}
+}
+@media (max-width: 576px) {
+  .navbar-light {
+    margin: 0;
+  }
+	footer {
+		.footer_logo {
+			.logo {
+				margin-bottom: 2.2rem;
+			}
+    }
+    .footer_nav,
+    .footer_business {
+			width: 100%;
+      ul {
+        flex-direction: column;
+        width: 200px;
+        text-align: center;
+				margin: 0 auto;
+				li {
+					margin-bottom: 2.2rem;
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+      }
+    }
+    .communication {
+      ul {
+        padding: 0;
+      }
+      .social {
+        margin-left: 0;
+      }
+    }
+  }
+}
+

@@ -1,0 +1,110 @@
+@mixin flex-position ($justify-content, $align-items, $flex-wrap: nowrap) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    flex-wrap: $flex-wrap;
+  }
+  
+.tile {
+    font-family: 'rubikRegular';
+    border: 1px solid #DCDCDC;
+    border-radius: 10px;
+    padding: 3rem;
+    margin: 3rem 0;
+    .upper_tile {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #DCDCDC;
+      margin-bottom: 2.3rem;
+      .left_upper_tile {
+        .league {
+          font-size: 2.4rem;
+          font-weight: 600;
+          color: rgba(74, 73, 74, 0.9);
+        }
+        .game {
+          font-size: 1.5rem;
+          color: #E67C3B;
+          background: #FFF5EE;
+          width: 13rem;
+          padding: 0.5rem;
+          text-align: center;
+          font-weight: 200;
+          margin-bottom: 2.5rem;
+          border-radius: 4px;
+        }
+      }
+      .right_uppe_tile {
+          img {
+            width: 68px;
+            height: 68px;
+          }
+      }
+    }
+    .date {
+      font-size: 1.5rem;
+      margin-top: 2.3rem;
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+      color: #367e6a;
+      display: flex;
+      align-items: center;
+      img {
+        width: 18px;
+        height: 18px;
+        margin-right: 1rem;
+      }
+      span {
+        margin-top: 0.3rem;
+      }
+    }
+    .place {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      color: #4a4a4a;
+      margin-bottom: 2rem;
+      .location {
+        font-size: 1.5rem;
+        margin-right: 1rem;
+      }
+      .adress {
+        display:flex;
+        font-size: 1.6rem;
+        opacity: 0.64;
+        span {
+          font-weight: 600;
+          margin-left: 5px;
+        }
+      }
+    }
+    .but_block {
+      @include flex-position (space-between, center);
+      .btn {
+        font-size: 1.6rem;
+        width: 140px;
+        height: 40px;
+        text-align: center;
+        padding-top: 0.8rem;
+      }
+      .btn-default {
+        color: rgba(74, 74, 74, 0.64);
+        opacity: 0.64;
+        text-decoration: none;
+        border: 1px solid rgba(74, 74, 74, 0.64);
+        margin-right: 1.5rem;
+        &:hover {
+          border: 1px solid rgba(74, 74, 74, 0.5);
+          color: rgba(74, 74, 74, 0.5);
+        }
+      }
+      .btn_send {
+        background: #2AC05C;
+        color: #ffffff;
+        &:hover {
+          background: #6CDD9F;
+          border-color: #6CDD9F;
+        }
+      }
+    }
+}

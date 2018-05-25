@@ -1,0 +1,19 @@
+# This is a sample build configuration for JavaScript.
+# Check our guides at https://confluence.atlassian.com/x/14UWN for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+image: node:8.11.1-alpine
+
+pipelines:
+  default: # here most always trigger before any other pipeline 
+    - step:
+        script:
+          - echo "This script runs on all branches that don't have any specific pipeline assigned in 'branches'."     
+  branches:
+    master:
+      - step:
+          script: 
+            - npm install -g typescript @angular/cli 
+            - npm install --unsafe-perms
+            - npm run lint

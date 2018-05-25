@@ -1,0 +1,314 @@
+@mixin flex-position ($justify-content, $align-items, $flex-wrap: nowrap) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-wrap: $flex-wrap;
+}
+
+.banner_all_games {
+  background-image: url(../../../assets/questions.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 50%;
+  border-radius: 4px;
+  height: 50rem;
+  margin: 0 5rem;
+  @include flex-position (flex-start, flex-end);
+}
+svg {
+  margin-right: 15px;
+}
+tabset {
+  font-family: 'rubikRegular';
+  border: none;
+  .nav-tabs {
+  justify-content: center;
+    .nav-item {
+      .nav-link {
+        display: flex;
+        font-size: 1.6rem;
+        border: none;
+        padding: 3.1rem;
+        color: rgba(73, 73, 73, 0.64);
+        font-family: 'rubikRegular';
+      }
+      .active {
+        color: rgba(230, 124, 59, 1);
+        border-bottom: 2px solid #E67C3B;
+      }
+    }
+  }
+  .tabs {
+    font-size: 1.6rem;
+  }
+  h4 {
+    margin: 10rem auto 7rem auto;
+    font-size: 3.2rem;
+    font-weight: 400;
+    color: rgba(74, 73, 74, 1);
+    text-align: center;
+  }
+  .tab_inner {
+    display:flex;
+    justify-content: space-around;
+    aside {
+      width: 26rem;
+      font-size: 1.4rem;
+      ul {
+        list-style: none;
+        li {
+          padding: 1.5rem;
+          border-radius: 4px;
+          cursor: pointer;
+          color: rgba(74, 74, 74, .64);
+          &:hover {
+            background: #F5F5F7;
+            color: rgba(74, 74, 74, 1);
+          }
+        }
+      }
+    }
+    accordion {
+      width: 75rem;
+      .card {
+        margin-bottom: 1.2rem;
+        .card-header {
+          padding: 2.5rem;
+          background:none;
+          border-bottom: none;
+          cursor: pointer;
+          font-size: 1.8rem;
+          color: rgba(54, 126, 106, 1);
+        }
+        .card-body {
+          font-family: 'rubikLight';
+          padding: 2.5rem;
+          color: rgba(74, 74, 74, 1);
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+  .rules {
+    h5 {
+      padding: 2.5rem;
+      background:none;
+      border-bottom: none;
+      cursor: pointer;
+      font-size: 1.8rem;
+      color: rgba(54, 126, 106, 1);
+    }
+    p {
+      font-family: 'rubikLight';
+      color: rgba(74, 74, 74, 1);
+      font-size: 1.6rem;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  .btn-facebook {
+    background: rgba($color: #3B5899, $alpha: 1.0);
+    color: #ffffff;
+    font-size: 1.6rem;
+    border-radius: 4px;
+    width: 24.2rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 10rem;
+    p {
+      padding-top: 0.8rem;
+    }
+    .fa {
+      margin: 0 2rem;
+    }
+  }
+  .facebook_text {
+    font-size: 1.6rem;
+    color: rgba($color: #494949, $alpha: 0.64);
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .quiz_tab_inner {
+    @include flex-position (space-around, stretch, wrap);
+    margin-top: 5rem;
+    .left {
+      p {
+        &:nth-child(1) {
+          font-weight: 800;
+          font-size: 2.4rem;
+          margin: 0 0 2.5rem 0;
+          color: rgba(73, 73, 73, 0.64);
+          letter-spacing: 1px;
+          span {
+            color: rgba(54, 126, 106, 1);
+          }
+        }
+        &:nth-child(2) {
+          font-weight: 200;
+          font-size: 1.8rem;
+          line-height: 1.8;
+          max-width: 46rem;
+          color: rgba(73, 73, 73, 0.64);
+        }
+      }
+    }
+    .right {
+      ul {
+        list-style-type: none;
+        margin-top: 7rem;
+        max-width: 51rem;
+        li {
+          @include flex-position (space-around, flex-start);
+          padding-top: 3.5rem;
+          font-size: 1.8rem;
+          color: rgba(74, 73, 74, 0.5);
+          font-weight: 200;
+          img {
+            height: 4rem;
+            margin-right: 15px;
+          }
+          p {
+            color: rgba(73, 73, 73, 1);
+            font-family: 'rubikLight';
+            line-height: 1.8;
+            span {
+              color: rgba(54, 126, 106, 1);
+            }
+          }
+          &:nth-child(1) {
+            p {
+              padding-bottom: 3.5rem;
+              border-bottom: 1px solid rgba(74, 73, 74, 0.3);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.clearfox {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.panel-open {
+  img {
+    transform: rotate(45deg);
+  }
+}
+.question_nav {
+  width: 15rem;
+}
+.active path {
+  fill: rgba(230, 124, 59, 1);
+}
+.question_phrase {
+  background-image: url(../../../assets/burda_questions.png);
+  background-size: cover;
+  background-position: top center;
+  max-width: 946px;
+  margin: 10rem auto;
+  padding: 5rem;
+  border-radius: 15px;
+  color: #ffffff;
+  padding: 5.5rem 0 5.5rem 7.3rem;
+  .btn {
+    font-family: 'rubikLight';
+    background: #2AC05C;
+    color: #ffffff;
+    &:hover {
+      background: #6CDD9F;
+      border-color: #6CDD9F;
+    }
+  }
+}
+.active_list {
+  background: rgba(44, 192, 109, 0.1);
+  color: rgba(54, 126, 106, 1);
+}
+span.emoji {
+  font-size: 20px !important;
+  vertical-align: middle !important;
+  line-height: 2 !important;
+}
+@media (max-width: 1199px) {
+  aside{
+    display: none;
+  }
+}
+@media (max-width: 991px) {
+  tabset {
+    h4 {
+      margin: 8rem auto 0 auto;
+    }
+    .quiz_tab_inner {
+      .left {
+        p {
+          text-align: center;
+          &:nth-child(2) {
+            max-width: 100%;
+          }
+        }
+      }
+      .right {
+        ul {
+          margin-top: 2rem;
+          max-width: 95%;
+          li {
+            padding-top: 1rem;
+            p {
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+    .btn-facebook {
+      margin-top: 6rem;
+    }
+  }
+  .question_phrase {
+    margin: 6rem auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner_all_games {
+    margin: 0;
+    border-radius: 0;
+  }
+  tabset {
+    .quiz_tab_inner, .tab_inner {
+      margin-top: 3rem;
+    }
+  }
+  aside {
+    display: none;
+  }
+}
+@media (max-width: 576px) {
+  tabset {
+    .quiz_tab_inner {
+      .left {
+        p:nth-child(2) {
+          font-size: 1.8rem;
+        }
+      }
+      .right {
+        ul {
+          max-width: 100%;
+          margin-left: -2rem;
+        }
+      }
+    }
+  }
+  .question_phrase {
+    padding: 5rem 1.5rem;
+  }
+  .rules {
+    margin: 0 1rem;
+  }
+}

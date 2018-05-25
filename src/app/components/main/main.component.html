@@ -1,0 +1,86 @@
+<content>
+  <div class="banner">
+    <div class="main_banner_text">
+      <h3>Интелектуально-развлекательная<br>командная игра</h3>
+      <p>Мы играем в Днепре и Запорожье</p>
+      <a class="btn btn-success" (click)="allGames()">Подать заявку</a>
+    </div>
+  </div>
+  <div class="container gallery_block">
+    <div class="main_about row">
+      <div class="main_text_about sm-hidden col-md-12 col-lg-12 col-xl-5">
+        <div class="main_about_inner">
+          <img src="../../../assets/main_logo.png" alt="">
+          <h3>Что такое QuizNight?</h3>
+          <p>Интеллектуально-развлекательная командная игра, позволяющая не только отлично провести время в кругу друзей, но и открыть много нового для себя!</p>
+          <p>Это 150 команд, более 1000 участников, сезонные игры с рейтингами и статистикой, забавные фотоотчеты, новые знакомства и отличное настроение! </p>
+          <a class="more" (click)="questionsPage ()">Узнать больше</a>
+        </div>
+      </div>
+      <div class="gallery sm-hidden col-md-12 col-lg-12 col-xl-7">
+        <div class="slide"><div class="first_slide_div"><img src="../../../assets/gallery_1.jpg" alt="" class="first_slide img_slide" (click)="openPopup($event)"></div></div>
+        <div class="slide"><div class="second_slide_div"><img src="../../../assets/gallery_2.jpg" alt="" class="second_slide img_slide" (click)="openPopup($event)"></div></div>
+        <div class="slide"><div class="third_slide_div"><img src="../../../assets/gallery_3.jpg" alt="" class="third_slide img_slide" (click)="openPopup($event)"></div></div>
+        <div class="slide"><div class="forth_slide_div"><img src="../../../assets/gallery_4.jpg" alt="" class="forth_slide img_slide" (click)="openPopup($event)"></div></div>
+        <div class="slide"><div class="fifth_slide_div"><img src="../../../assets/gallery_5.jpg" alt="" class="fifth_slide img_slide" (click)="openPopup($event)"></div></div>
+        <div class="slide"><div class="sixth_slide_div"><img src="../../../assets/gallery_6.jpg" alt="" class="sixth_slide img_slide" (click)="openPopup($event)"></div></div>
+        <div class="slide"><div class="seventh_slide_div"><img src="../../../assets/gallery_7.jpg" alt="" class="seventh_slide img_slide" (click)="openPopup($event)"></div></div>
+        <div class="slide"><div class="eighth_slide_div"><img src="../../../assets/gallery_8.jpg" alt="" class="eighth_slide img_slide" (click)="openPopup($event)"></div></div>
+      </div>
+      <div class="small_gallery col-md-12">
+        <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="info_block row ">
+      <div class="persons col-xl-4 ">
+        <img src="../../../assets/persons.png" alt="" >
+        <p class="info_number">6</p>
+        <p class="info_text">человек в команде</p>
+      </div>
+      <img src="../../../assets/arrow.png" alt="" class="arrow">
+      <div class="questions col-xl-4">
+        <img src="../../../assets/questions.png" alt="" >
+        <p class="info_number">60</p>
+        <p class="info_text">вопросов за игру</p>
+      </div>
+      <img src="../../../assets/arrow.png" alt="" class="arrow">
+      <div class="cost col-xl-4">
+        <img src="../../../assets/cost.png" alt="">
+        <p class="info_number">70</p>
+        <p class="info_text">гривен с учасника</p>
+      </div>
+    </div>
+  </div>
+  <div class="container schedule">
+    <h3>Ближайшие Игры</h3>
+    <p class="schedule_header">Игры проходят каждую неделю,<a href="https://www.facebook.com/quiz.night.dp/">свяжитесь с нами,</a> если нужна помощь в выборе игры.</p>
+    <div class="row shedule_body_less">
+      <app-game-tile class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4" *ngFor="let game of games | dateSort | slice:0:3" [game]="game"></app-game-tile>
+    </div>
+    <div class="show">
+      <a class="btn btn-default" (click)="allGames()">Больше игр</a>
+    </div>
+  </div>
+  <div class="container">
+      <div class="main_phrase">
+          <img src="../../../assets/main_logo.png" alt="logo" class="main_phrase_logo">
+          <p class="question">
+            Ты еще не с нами?
+          </p>
+          <p class="phrase">Тогда Борис Бурда придет к тебе ночью <span class="emoji">😄</span></p>
+          <a class="btn btn-success btn_phrase" (click)="allGames()">Подать заявку</a>
+        </div>
+  </div>
+</content>
+<div class="popup">
+  <div class="popup_inner">
+    <div class="close" (click)="closePopup()"><img src="../../../assets/close.png" alt="logo" class="close"></div>
+    <div class="pop_content">
+      <div class="left_arrow"><img src="../../../assets/chevron_left.png" alt="" (click)="prevImg()"></div>
+      <img src="" alt="" id="new" class="slide">
+      <div class="right_arrow"><img src="../../../assets/chevron_right.png" alt="" (click)="nextImg()"></div>
+    </div>
+  </div>
+</div>

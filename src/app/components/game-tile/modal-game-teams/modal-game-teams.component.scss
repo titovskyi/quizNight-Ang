@@ -1,0 +1,113 @@
+@mixin flex-position ($justify-content, $align-items, $flex-wrap: nowrap) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-wrap: $flex-wrap;
+}
+
+.modal-header {
+  border-bottom: none;
+  h4 {
+    font-family: 'rubikMedium';
+    font-size: 3.2rem;
+    margin: 0 auto;
+    color:rgba(74, 74, 74, 1);
+  }
+}
+.modal-body {
+  padding: 4rem;
+  .modal_inner {
+    padding: 2rem 10rem;
+  }
+}
+.approved_teams {
+  color: #22B75A;
+  font-size: 1.4rem;
+}
+.waited_teams {
+  font-size: 1.4rem;
+  color: #E67C3B;
+  margin-top: 5rem;
+}
+.no_teams {
+  font-size: 1.4rem;
+}
+.modal_team {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1.8rem;
+  font-family: 'rubikLight';
+  margin-bottom: 2rem;
+  .list_number {
+    font-size: 1.4rem;
+    font-family: 'rubikMedium';
+    border: 1px solid #EDEDF3;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    margin-right: 10px;
+    @include flex-position (center, center);
+  }
+}
+.modal_team_false {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1.8rem;
+  font-family: 'rubikLight';
+  color: rgba(74, 73, 74, 1);
+  margin-bottom: 2rem;
+  .in_modal_team_false {
+    color: rgba(74, 73, 74, .7);
+  }
+  .list_number {
+    font-size: 1.4rem;
+    font-family: 'rubikMedium';
+    border: 1px solid #EDEDF3;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    margin-right: 10px;
+    @include flex-position (center, center);
+  }
+}
+.but_block {
+  justify-content: center;
+  .btn {
+    margin-left: 1rem;
+    margin-right: 2rem;
+  }
+  .btn-default {
+    color: rgba(74, 74, 74, 0.64);
+    opacity: 0.64;
+    text-decoration: none;
+    border: 1px solid rgba(74, 74, 74, 0.64);
+    margin-right: 1.5rem;
+    &:hover {
+      border: 1px solid rgba(74, 74, 74, 0.5);
+      color: rgba(74, 74, 74, 0.5);
+    }
+  }
+  .btn_send {
+    background: #2AC05C;
+    border: none;
+    color: #ffffff;
+    &:hover {
+      background: #6CDD9F;
+    }
+  }
+}
+.no_teams {
+  font-size: 1.4rem;
+}
+@media (max-width: 576px) {
+  .modal_team_false, .modal_team {
+    margin-bottom: 1rem;
+  }
+  .waited_teams {
+    margin-top: 2rem;
+  }
+}

@@ -1,0 +1,22 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">Подача заявки ({{league}} лига)</h4>
+</div>
+<div class="modal-body">
+  <p [ngClass]="this.sendText ? 'display-block' : 'modal-success'">Заявка принята, теперь она ждет рассмотрения администратором</p>
+  <p [ngClass]="this.pluckTeams ? 'display-block' : 'modal-same-team'">Ваша заявка была подана ранее, проверьте список заявленных команд.</p>
+  <div class="modal_inner">
+      <select [(ngModel)]="selectedTeam" (ngModelChange)="onChange()" id="select-team">
+        <option [ngValue]="undefined" disabled selected hidden>Название команды</option>
+        <option *ngFor="let team of list" [ngValue]="team">
+          {{ team.name }}
+        </option>
+      </select>
+  </div>
+  <div class="modal_text">
+    <p>Если вашей команды нет в списке, то <a href="https://www.facebook.com/quiz.night.dp/">свяжитесь с нами</a> и мы поможем в выборе игры.</p>
+  </div>
+</div>
+<div class="but_block">
+  <a class="btn btn-default" (click)="goBack()">Назад</a>
+  <button class="btn btn-success btn_send" (click)="onSubmit()" [disabled] = "isDisabled" >Подать заявку</button>
+</div>

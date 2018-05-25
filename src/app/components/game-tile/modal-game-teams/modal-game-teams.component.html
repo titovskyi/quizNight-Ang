@@ -1,0 +1,25 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">Заявки на игру ({{ filteredTeams.length }})</h4>
+</div>
+<div class="modal-body">
+  <div class="modal_inner" *ngIf="list_false.length > 0 || list_true.length > 0; then first else second"></div>
+    <ng-template #first>
+      <p class="approved_teams">Подтвержденные команды:</p>
+      <div class="modal_team" *ngFor="let gameTeams of list_true; let i = index">
+        <div class="list_number" >{{ i + 1 }}</div>
+        <div class="modal_team_name">{{gameTeams.name}}</div>
+      </div>
+      <p class="waited_teams">Ожидают подтверждения организатором:</p>
+      <div class="modal_team_false" *ngFor="let gameTeams of list_false; let i = index">
+        <div class="list_number">{{ i + 1 }}</div>
+        <div class="in_modal_team_false">{{gameTeams.name}}</div>
+      </div>
+    </ng-template>
+    <ng-template #second>
+      <p class="no_teams">Ни одна команда не подала заявку</p>
+    </ng-template>
+</div>
+<div class="but_block">
+  <a class="btn btn-default" (click)="goBack()">Назад</a>
+  <a class="btn btn-success btn_send" (click)="sendTeam()">Подать заявку</a>
+</div>

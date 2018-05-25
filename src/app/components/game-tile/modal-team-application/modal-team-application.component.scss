@@ -1,0 +1,98 @@
+
+.modal-header {
+  border-bottom: none;
+    h4 {
+        font-family: 'rubikMedium';
+        font-size: 3.2rem;
+        margin: 0 auto;
+        color:rgba(74, 74, 74, 1);
+    }
+}
+.modal-body {
+    .modal-success, 
+    .modal-same-team {
+        display: none;
+    }
+    .modal_inner {
+        padding: 0 2rem 2rem 2rem;
+        text-align: center;
+        .modal_team {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.4rem;
+            .modal_img {
+                width: 50px;
+                height: 50px;
+            }
+        }
+    }
+    .modal_text {
+        font-size: 1.4rem;
+        padding: 0 4rem;
+        p {
+          max-width: 450px;
+          color: rgba(74, 73, 74, 0.64);
+          line-height: 2;
+          a {
+            color: rgba(54, 126, 106, 1);
+            margin-left: 0.5rem;
+          }
+        }
+    }
+}
+select {
+  width: 400px;
+}
+.but_block {
+    justify-content: center;
+    .btn {
+        margin-left: 1rem;
+    }
+    .btn-default {
+      color: rgba(74, 74, 74, 0.64);
+      opacity: 0.64;
+      text-decoration: none;
+      border: 1px solid rgba(74, 74, 74, 0.64);
+      margin-right: 1.5rem;
+      &:hover {
+        border: 1px solid rgba(74, 74, 74, 0.5);
+        color: rgba(74, 74, 74, 0.5);
+      }
+    }
+    .btn_send {
+      background: #2AC05C;
+      border: none;
+      color: #ffffff;
+      padding-top: 0;
+      &:hover {
+        background: #6CDD9F;
+      }
+    }
+  }
+  .display-block {
+    display: block;
+    font-size: 1.4rem;
+    padding: 0 4rem;
+    max-width: 450px;
+    color: #367e6a;
+  }
+  @media (max-width: 576px) {
+    .modal-header {
+      h4 {
+        font-size: 2.3rem;
+      }
+    }
+      select {
+        width: 200px;
+        margin-top: 1.5rem;
+      }
+    .modal-body{
+      .modal_text{
+        padding: 0 2rem;
+      }
+    }
+    .display-block {
+      padding: 0 2rem;
+    }
+  }
