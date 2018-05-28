@@ -10,6 +10,7 @@
 content {
 	font-family: 'rubikRegular';
 	.banner {
+		position: relative;
 		background-image: url(../../../assets/main_banner.jpg);
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -18,7 +19,15 @@ content {
 		height: 70rem;
 		margin: 0 5rem;
 		@include flex-position (center, center);
+		&:before {
+			background-color: rgba(0, 0, 0, 0.2);
+			content: '';
+			height: 100%;
+			position: absolute;
+			width: 100%;
+		}
 		.main_banner_text {
+			position: absolute;
 			text-align: center;
 			color: #ffffff;
 			h3 {
@@ -482,6 +491,20 @@ span.emoji {
 	}
 	content .main_phrase {
 		padding: 5rem 2rem;
+	}
+}
+@media (max-width: 544px) {
+	content {
+		.main_about {
+			.main_text_about {
+				.main_about_inner {
+					width: 100%;
+					.more {
+						margin-top: 0;
+					}	
+				}
+			}
+		} 	
 	}
 }
 @media (max-width: 455px) {

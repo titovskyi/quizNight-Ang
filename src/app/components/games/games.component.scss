@@ -6,6 +6,7 @@
 }
 
 .banner_all_games {
+  position: relative;
   background-image: url(../../../assets/games.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -14,6 +15,13 @@
   height: 50rem;
   margin: 0 5rem;
   @include flex-position (flex-start, flex-end);
+  &:before {
+    background-color: rgba(0, 0, 0, 0.2);
+    content: '';
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
 }
 .filter_block {
   .filter_text {

@@ -64,7 +64,6 @@ import { TeamsService } from '../../../services/teams.service';
 
     this.teamsService.addTeam(createTeam).subscribe(
       data => {
-        this.bsModalRef.hide();
         return true;
       },
       error => {
